@@ -20,7 +20,15 @@ public class test
     public static void main(String[] args) throws IOException
     {
         StudentDemo demo = new StudentDemo();
-        BufferedReader buffer = new BufferedReader(new FileReader("readme.txt"));
+        BufferedReader buffer;
+        if (args.length == 0)
+        {
+            buffer = new BufferedReader(new FileReader("readme.txt"));
+        }
+        else
+        {
+            buffer = new BufferedReader(new FileReader(args[0]));
+        }
         String str = "", s = "";
         while ((str = buffer.readLine()) != null)
         {
